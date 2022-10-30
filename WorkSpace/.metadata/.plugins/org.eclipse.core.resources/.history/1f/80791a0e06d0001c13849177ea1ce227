@@ -1,0 +1,6 @@
+package lab1.java2;
+
+public interface DAO {
+
+	
+}

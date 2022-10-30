@@ -1,0 +1,117 @@
+package lesson1.java2;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class QLSV {
+	private ArrayList<SinhVien> list = new ArrayList<SinhVien>();
+	
+	public void input(Scanner scanner) {
+		try {
+			boolean check = true;
+			int i = 1;
+			SinhVien sv = new SinhVien();
+			SinhVienNuocNgoai svnn = new SinhVienNuocNgoai();
+			do {
+				try {
+					System.out.print("  >> SELECT TYPE STUDENT \n\t 1.STUDENT    2.FOREIGN STUDENT\n -> Please choose: ");
+					int select = Integer.parseInt(scanner.nextLine());
+					System.out.printf("  >> IMPORT THE STUDENT %d \n",i);
+					switch (select) {
+						case 1: 
+							sv.input(scanner);
+							list.add(sv);
+							break;
+						case 2: 
+							svnn.input(scanner);
+							list.add(svnn);
+							break;
+						default:
+							System.out.println("   --> Please re-enter!");
+					}
+					
+					
+					
+					System.out.print("--> Do you want to continue entering? Y/N: ");
+					String enter =  scanner.nextLine();
+					i++;
+					if(enter.equalsIgnoreCase("y")) {
+						check = true;
+					}else {
+						check = false;
+					}
+				} catch (Exception e) {
+					check = true;
+				}
+				
+			} while (check);
+			
+			
+		} catch (Exception e) {
+			System.out.println("==> ERROR!");
+		}	
+	}
+	
+	
+	public void output() {
+		if(!list.isEmpty()) {
+			System.out.printf(" %20s %20s %20s %20s ","ID","NAME","POINT","PRIORITYPOINT");
+			for(SinhVien ds : list) {
+				ds.output();
+			}			
+		}else {
+			System.out.println("\t  --> No input data yet!");
+		}
+
+	}
+	
+	
+	public void searchStudent() {
+		if (!list.isEmpty()) {
+			ArrayList<SinhVien> list2 = new ArrayList<SinhVien>();
+			for(SinhVien ds : list) {
+				if (ds.getPoint() > 6) {
+					list2.add(ds);
+				}
+			}
+			if (!list2.isEmpty()) {
+				list.retainAll(list2);
+				System.out.println("\t\t\t *--- LIST OF STUDENTS WITH GRADE > 6---* ");
+				output();
+			}else {
+				System.out.println("\t -> No students with point greater than 6 . Were found! ");
+			}
+		
+		}else {
+			System.out.println("\t  --> No input data yet!");
+		}
+
+	}
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

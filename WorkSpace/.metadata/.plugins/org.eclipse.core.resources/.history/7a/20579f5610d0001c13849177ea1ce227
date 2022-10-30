@@ -1,0 +1,74 @@
+package lesson1.java2;
+
+import java.util.Scanner;
+
+public class SinhVienNuocNgoai extends SinhVien{
+
+	private double priorityPoint;
+	
+	public SinhVienNuocNgoai() {
+	
+	}
+
+	public SinhVienNuocNgoai(String id, String name, double point,double priorityPoint) {
+		super(id, name, point);
+		this.priorityPoint = priorityPoint;
+	}
+	
+	public void input(Scanner scanner) {
+		super.input(scanner);
+		try {
+			boolean check = true; 
+			do {
+				try {
+					System.out.print(" - Enter pritority point: ");
+					String assignPriorityPoint = String.valueOf(this.priorityPoint);
+					assignPriorityPoint = scanner.nextLine();
+					
+					String checkPriority = "\\d{1,5}";
+					
+					if (assignPriorityPoint.isEmpty() || assignPriorityPoint.equals(" ")) {
+						System.out.println("\t  --> PLEASE ENTER PRITORITY POINT!");
+						check = true;
+					}else if (!assignPriorityPoint.matches(checkPriority)) {
+						System.out.println("\t  --> PLEASE ENTER THE CORRECT NUMBER OF PRITORITY POINTS!");
+						check = true;
+					}else if (Double.valueOf(assignPriorityPoint) < 0 ) {
+						System.out.println("\t  --> PRITORITY POINT MUST BE GREATER THAN 0! PLEASE RE-ENTER!");
+						check = true;
+					}else{
+						check = false;
+						this.priorityPoint = Double.valueOf(assignPriorityPoint);
+					}
+				} catch (Exception e) {
+					check = true;
+				}
+			} while (check);
+		} catch (Exception e) {
+			System.out.println("==> ERROR!");
+		}
+		
+	}
+	public void output() {
+		super.output();
+		System.out.printf("  %20.1f ",priorityPoint);
+	}
+
+	
+	
+	
+	public double getPriorityPoint() {
+		return priorityPoint;
+	}
+
+	public void setPriorityPoint(double priorityPoint) {
+		this.priorityPoint = priorityPoint;
+	}
+
+
+	
+
+
+	
+	
+}

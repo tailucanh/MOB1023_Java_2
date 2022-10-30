@@ -1,0 +1,99 @@
+package lesson1.java2;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		menu();
+
+	}
+	
+	
+	public static void menu() {
+		System.out.println("\n\t^..^___QUẢN LÍ SINH VIÊN___^..^");
+		System.out.println("\t|                --><><><><><><><--                ");
+		System.out.println("\t| 1.Nhập danh sách sinh viên.  ");
+		System.out.println("\t| 2.Xuất danh sách sinh viên.   ");
+		System.out.println("\t| 3.Tìm kiếm sinh viên có điểm > 6.    ");
+		System.out.println("\t| 4.Săp xếp sinh viên giảm dần theo họ tên.        ");  
+		System.out.println("\t| 0.Thoát chương trình.");
+		System.out.println("\t+---------------------------------------+");
+	
+
+		
+		try {
+			String menu = null;
+			Scanner  scanner = new Scanner(System.in);
+			boolean check = false;
+			QLSV ds = new QLSV();
+			do {
+				do {
+					try {
+						System.out.print(" -> Please select function: ");
+						menu = scanner.nextLine();
+						
+						if (menu.isEmpty() || menu.equals(" ")) {
+							System.out.println(" -> Please choose the right function!");
+							check = true;
+						}else {
+							check = false;
+						}
+					} catch (Exception e) {
+						check = true;
+					}
+				} while (check);
+				System.out.println("\t+----------------------------------------------+");
+				
+				
+				
+				switch (menu) {
+				case "1":
+							
+					ds.input(scanner);
+										
+					System.out.println(" ");
+					System.out.println("\t----> Đã hoàn thành chức năng...");
+					System.out.println("    -------------------------------------------");
+					break;
+				case "2":
+				
+					System.out.println("\t\t *---DANH SÁCH SINH VIÊN---* ");
+					System.out.println("");
+					
+					ds.output();
+					
+					System.out.println(" ");
+					System.out.println("\t----> Đã hoàn thành chức năng...");
+					System.out.println("    -------------------------------------------");
+					break;
+				case "3":
+
+					
+					System.out.println(" ");
+					System.out.println("\t----> Đã hoàn thành chức năng...");
+					System.out.println("    -------------------------------------------");
+					break;
+				case "4":
+				
+					
+					System.out.println(" ");
+					System.out.println("\t----> Đã hoàn thành chức năng...");
+					System.out.println("    -------------------------------------------");
+					break;
+				
+				case "0":
+	
+					System.out.println("\t| Goodbye! See you again ^-^ |");
+					return;
+				default:
+					System.out.println("\t-->Chương trình chỉ từ 1-->9 chức năng.Vui lòng nhập lại.");
+					System.out.println(" ");
+				}
+			}while(true);
+		} catch (Exception e) {
+			System.out.println("==> ERROR!");
+		}
+	}
+
+}

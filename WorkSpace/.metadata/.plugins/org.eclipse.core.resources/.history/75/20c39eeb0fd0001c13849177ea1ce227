@@ -1,0 +1,101 @@
+package lesson1.java2;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class QLSV {
+	private ArrayList<SinhVien> list = new ArrayList<SinhVien>();
+	
+	public void input(Scanner scanner) {
+		try {
+			boolean check = true;
+			int i = 1;
+			SinhVien sv = new SinhVien();
+			SinhVienNuocNgoai svnn = new SinhVienNuocNgoai();
+			do {
+				try {
+					System.out.print("  >> SELECT TYPE STUDENT \n\t 1.STUDENT    2.FOREIGN STUDENT\n -> Please choose: ");
+					int select = Integer.parseInt(scanner.nextLine());
+					System.out.printf("  >> IMPORT THE STUDENT %d \n",i);
+					switch (select) {
+						case 1: 
+							sv.input(scanner);
+							list.add(sv);
+							break;
+						case 2: 
+							svnn.input(scanner);
+							list.add(svnn);
+							break;
+						default:
+							System.out.println("   --> Please re-enter!");
+					}
+					
+					
+					
+					System.out.print("--> Do you want to continue entering? Y/N: ");
+					String enter =  scanner.nextLine();
+					i++;
+					if(enter.equalsIgnoreCase("y")) {
+						check = true;
+					}else {
+						check = false;
+					}
+				} catch (Exception e) {
+					check = true;
+				}
+				
+			} while (check);
+			
+			
+		} catch (Exception e) {
+			System.out.println("==> ERROR!");
+		}	
+	}
+	
+	
+	public void output() {
+		System.out.printf(" %14s %14s %14s %14s ","ID","NAME","POINT","PRIORITY POINT");
+		for(SinhVien ds : list) {
+			ds.output();
+		}
+	}
+	
+	
+	public void searchStudent() {
+		ArrayList<SinhVien> list2 = new ArrayList<SinhVien>();
+		for(SinhVien ds : list) {
+			if (ds.getPoint() > 6) {
+				list2.add(ds);
+			}
+		}
+		list.retainAll(list2);
+		output();
+	}
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

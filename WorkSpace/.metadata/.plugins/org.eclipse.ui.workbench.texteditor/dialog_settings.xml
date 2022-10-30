@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="&#x09;&#x09;try {"/>
+		<list key="findhistory">
+			<item value="&#x09;&#x09;try {"/>
+			<item value="&#x0D;&#x0A;&#x09;&#x09;/*&#x0D;&#x0A;&#x09;&#x09; * ImageIcon icon = new ImageIcon(&quot;D:\\Adobe pts cc 2019\\Ảnh\\imgs.jpg&quot;);&#x0D;&#x0A;&#x09;&#x09; * &#x0D;&#x0A;&#x09;&#x09; * JLabel label = new JLabel(); label.setText(&quot;Hi Smile&quot;); label.setIcon(icon);&#x0D;&#x0A;&#x09;&#x09; * //label.setVerticalAlignment(JLabel.BOTTOM); //Chiều dọc&#x0D;&#x0A;&#x09;&#x09; * //label.setHorizontalAlignment(JLabel.CENTER); //Chiều ngang&#x0D;&#x0A;&#x09;&#x09; * label.setBounds(100, 100, 200, 150); //Căn icon thủ công&#x0D;&#x0A;&#x09;&#x09; * &#x0D;&#x0A;&#x09;&#x09; * &#x0D;&#x0A;&#x09;&#x09; * JPanel pinkPanel = new JPanel(); pinkPanel.setBackground(new&#x0D;&#x0A;&#x09;&#x09; * Color(0xc9168e)); pinkPanel.setBounds(0, 0, 250, 250); //Căn vị trí&#x0D;&#x0A;&#x09;&#x09; * pinkPanel.setLayout(null);&#x0D;&#x0A;&#x09;&#x09; * &#x0D;&#x0A;&#x09;&#x09; * &#x0D;&#x0A;&#x09;&#x09; * JPanel bluePanel = new JPanel(); bluePanel.setBackground(new&#x0D;&#x0A;&#x09;&#x09; * Color(0x23bfde)); bluePanel.setBounds(250,0,250,250);&#x0D;&#x0A;&#x09;&#x09; * bluePanel.setLayout(null);&#x0D;&#x0A;&#x09;&#x09; * &#x0D;&#x0A;&#x09;&#x09; * JPanel greenPanel = new JPanel(); greenPanel.setBackground(new&#x0D;&#x0A;&#x09;&#x09; * Color(0x1dcc3a)); greenPanel.setBounds(0,250,500,250);&#x0D;&#x0A;&#x09;&#x09; * greenPanel.setLayout(null); //Chỉng khung&#x0D;&#x0A;&#x09;&#x09; * &#x0D;&#x0A;&#x09;&#x09; * &#x0D;&#x0A;&#x09;&#x09; * JFrame frame = new JFrame(); frame.setSize(700,700);&#x0D;&#x0A;&#x09;&#x09; * frame.setTitle(&quot;Smile...&quot;); frame.setLayout(null); frame.setVisible(true);&#x0D;&#x0A;&#x09;&#x09; * frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);&#x0D;&#x0A;&#x09;&#x09; * &#x0D;&#x0A;&#x09;&#x09; * greenPanel.add(label); //Thêm icon vào mảng&#x0D;&#x0A;&#x09;&#x09; * &#x0D;&#x0A;&#x09;&#x09; * &#x0D;&#x0A;&#x09;&#x09; * frame.add(pinkPanel); frame.add(bluePanel); frame.add(greenPanel);&#x0D;&#x0A;&#x09;&#x09; */"/>
+			<item value="/*"/>
+			<item value="&#x09;ImageIcon img = new ImageIcon(&quot;D:\\Visual Studio Code\\Smile-Thongtin\\smile3.png&quot;); "/>
+		</list>
+	</section>
+</section>

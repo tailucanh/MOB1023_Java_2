@@ -1,0 +1,100 @@
+package lesson1.java2;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		menu();
+
+	}
+	
+	
+	public static void menu() {
+		System.out.println("\n\t\t^..^___STUDENT MANAGEMENT___^..^");
+		System.out.println("\t                --><><><><><><><--                ");
+		System.out.println("\t  1.Enter student list.  ");
+		System.out.println("\t  2.Export student list.   ");
+		System.out.println("\t  3.Looking for students with point > 6.    ");
+		System.out.println("\t  4.Sort students in descending order by last name.        ");  
+		System.out.println("\t  0.Exit the program.");
+		System.out.println("\t+---------------------------------------+");
+	
+
+		
+		try {
+			String menu = null;
+			Scanner  scanner = new Scanner(System.in);
+			boolean check = false;
+			QLSV ds = new QLSV();
+			do {
+				do {
+					try {
+						System.out.print(" -> Please select function: ");
+						menu = scanner.nextLine();
+						
+						if (menu.isEmpty() || menu.equals(" ")) {
+							System.out.println(" -> Please choose the right function!");
+							check = true;
+						}else {
+							check = false;
+						}
+					} catch (Exception e) {
+						check = true;
+					}
+				} while (check);
+				System.out.println("\t+----------------------------------------------+");
+				
+				
+				
+				switch (menu) {
+				case "1":
+							
+					ds.input(scanner);
+										
+					System.out.println(" ");
+					System.out.println("\t----> Completed function...");
+		
+					break;
+				case "2":
+				
+					System.out.printf(" %60s \n","*---LIST OF STUDENTS---*");
+					System.out.println("");
+					
+					ds.output();
+					
+					System.out.println(" ");
+					System.out.println("\t----> Completed function...");
+		
+					break;
+				case "3":
+
+					ds.searchStudent();
+					
+					System.out.println(" ");
+					System.out.println("\t----> Completed function...");
+				
+					break;
+				case "4":
+					ds.sortStudentsByName();
+					
+					System.out.println(" ");
+					System.out.println("\t----> Completed function...");
+				
+					break;
+				
+				case "0":
+	
+					System.out.println("\t| Goodbye! See you again ^-^ |");
+					return;
+				default:
+					System.out.println("\t--> The program has only 1-->9 functions. Please re-enter.");
+					System.out.println(" ");
+				}
+			}while(true);
+		} catch (Exception e) {
+			System.out.println("==> ERROR!");
+		}
+	}
+
+}

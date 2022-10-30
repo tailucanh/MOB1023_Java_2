@@ -1,0 +1,48 @@
+package lab1.java2;
+
+import java.util.ArrayList;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scanner = new Scanner(System.in);
+		
+		ArrayList<Product> listProducts = new ArrayList<Product>();
+		
+		
+		Product product = new Product();
+		boolean check = true;
+		
+		int i = 1;
+		do {
+			try {
+				System.out.printf("  >> IMPORT THE PRODUCTS %d \n",i);
+				product.input();
+				listProducts.add(product);
+				System.out.print("--> Do you want to continue entering? Y/N: ");
+				String enter =  scanner.nextLine();
+				i++;
+				if(enter.equalsIgnoreCase("y")) {
+					check = true;
+				}else {
+					check = false;
+				}
+			
+			} catch (Exception e) {
+				check = true;
+			}
+			
+		} while (check);
+		
+		System.out.println("\t   Name \tPrice \tImportTax");
+		for(Product list : listProducts) {
+			list.output();
+			System.out.println("");
+		}
+			
+	}
+
+}

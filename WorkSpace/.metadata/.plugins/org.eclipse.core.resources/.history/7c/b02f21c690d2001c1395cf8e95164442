@@ -1,0 +1,3 @@
+module ph26495_MOB1023 {
+	requires java.desktop;
+}

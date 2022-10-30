@@ -1,0 +1,58 @@
+package lab1.java2;
+
+import java.util.Scanner;
+
+public class Product {
+	private String name;
+	private double price;
+	
+	
+	public Product() {
+
+	}
+	
+	
+	public Product(String name, double price) {
+		super();
+		this.name = name;
+		this.price = price;
+	}
+	
+	
+	
+	public double getImportTax() {
+		return 0.1*price;
+	}
+	
+	
+	public void input() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("-> Enter name: ");
+		name = scanner.nextLine();
+		System.out.print("-> Enter price: ");
+		price = scanner.nextDouble();
+	}
+	
+	public void output() {
+		System.out.printf("%-20s  %-20.1f  %-20.1f", name,price,getImportTax());
+	} 
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
+
+
+
+	
+
+}

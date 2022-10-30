@@ -1,0 +1,108 @@
+package lab1.java2;
+
+import java.util.ArrayList;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		//Nhập dữ liệu bài 2
+		try {
+			Scanner scanner = new Scanner(System.in);
+			
+			ArrayList<Product> listProducts = new ArrayList<Product>();
+			
+			
+			Product product = new Product();
+			boolean check = true;
+			
+			int i = 1;
+			do {
+				try {
+					System.out.printf("  >> IMPORT THE PRODUCTS %d \n",i);
+					product.input();
+					listProducts.add(product);
+					System.out.print("--> Do you want to continue entering? Y/N: ");
+					String enter =  scanner.nextLine();
+					i++;
+					if(enter.equalsIgnoreCase("y")) {
+						check = true;
+					}else {
+						check = false;
+					}
+				
+				} catch (Exception e) {
+					check = true;
+				}
+				
+			} while (check);
+			
+			System.out.printf("\t %-20s  %-20.1f  %-20.1f ", "name","price","ImportTax");
+			for(Product list : listProducts) {
+				list.output();
+				System.out.println("");
+			}			
+		} catch (Exception e) {
+			System.out.println("==> ERROR!");
+		}
+		
+		//Nhập dữ liệu bài 3
+		try {
+			Scanner scanner = new Scanner(System.in);
+			
+			ArrayList<Product> listProducts = new ArrayList<Product>();
+			
+			
+			Product product = new Product();
+			NoTaxProduct noPr = new NoTaxProduct();
+			boolean check = true;
+			
+			int i = 1;
+			do {
+				try {
+					System.out.println("  >> SELECT TYPE\n\t 1.Product 2.NoTaxProduct");
+					String select = scanner.nextLine();
+					System.out.printf("  >> IMPORT THE PRODUCTS %d \n",i);
+					if (select.equals("1")) {
+						check = true;
+						product.input();
+						listProducts.add(product);
+					}else if(select.equals("2")) {
+						check = true;
+						noPr.input();
+						listProducts.add(noPr);
+					}else {
+						check = false;
+					}
+					
+					
+					System.out.print("--> Do you want to continue entering? Y/N: ");
+					String enter =  scanner.nextLine();
+					i++;
+					if(enter.equalsIgnoreCase("y")) {
+						check = true;
+					}else {
+						check = false;
+					}
+				
+				} catch (Exception e) {
+					check = true;
+				}
+				
+			} while (check);
+			
+			
+			for(Product list : listProducts) {
+				list.output();
+				System.out.println("");
+			}			
+		} catch (Exception e) {
+			System.out.println("==> ERROR!");
+		}
+		
+		
+			
+	}
+
+}

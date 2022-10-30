@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commands>
+	<moveEntry
+		id="org.eclipse.wb.swing.components javax.swing.JTextArea"
+		category="org.eclipse.wb.swing.components"
+		nextEntry="org.eclipse.wb.swing.components javax.swing.JTextPane"/>
+	<addCategory
+		id="custom_1652428791387"
+		name="Staff ID"
+		description=""
+		visible="true"
+		open="true"
+		nextCategory="org.eclipse.wb.swing.components"/>
+</commands>
